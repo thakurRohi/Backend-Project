@@ -17,6 +17,17 @@ dotenv.config({
 
 //then finally call the db connection
 connectDB()
+// async await gives promises in return so:--
+
+// till now our db is connected but still our app is not listening . therefore we will do app.listen
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
+    })
+})
+.catch((err)=>{
+    console.log("Mongo DB connection failed: ",err)
+})
 // now we are going to try the 2nd approach , as in the first approach a lot of index file has been poluted.
 // we will try to make it clean and more readable by creating a new file and importing the required files in it.
 
