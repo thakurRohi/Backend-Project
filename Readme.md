@@ -14,3 +14,9 @@ when any cahnges are made in env variable you have to manualy restrat the nodemo
 
 
 3. User and video models:-
+
+4.  File upload:-
+Production grade projects use 3rd part services instead of server of their own to upload or store files . Also code of file upload is kept in utils folder as a result it could be reused again and again . 
+
+Common services we will be using :- Cloudinary 
+We are going to get the local path of file uploadaed in server , via this path file is uploaded at cloudinary server . Consecutively removew file from server . 
