@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-
+const app = express()
 //configurations:-\
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
@@ -19,6 +19,14 @@ app.use(express.static("public"))// storing assets such that pdf or images in th
 app.use(cookieParser())
 
 
-const app = express()
+//routes import
+
+import userRouter from './routes/user.routes.js'
+
+// routes declaraton
+// when user goes to users router controll is passed to useRouter and task is performed accordingly .
+app.use("/api/v1/users",userRouter)
+
+
 
 export { app }

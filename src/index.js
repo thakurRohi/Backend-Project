@@ -7,8 +7,11 @@
 //2. dotenv.config({path: './env'}) // this will load the env file and will make it available to the entire application 
 //
 import dotenv from "dotenv"
+
 import connectDB from "./db/index.js";// before it was ./db but it will throw error when run dev . to resolve this 
 // error we will add ./db/index.js
+import { app } from "./app.js";
+
 
 
 dotenv.config({
@@ -21,7 +24,7 @@ connectDB()
 
 // till now our db is connected but still our app is not listening . therefore we will do app.listen
 .then(() => {
-    app.listen(process.env.PORT || 8000, () => {
+    app.listen(process.env.PORT || 8001, () => {
         console.log(`⚙️ Server is running at port : ${process.env.PORT}`);
     })
 })
